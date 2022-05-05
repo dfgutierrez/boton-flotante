@@ -6,22 +6,35 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="estilos.css">
-	<title>Tooltips Avanzados con JS</title>
+	<title>sms-email</title>
 </head>
 <body>
 	<main class="contenedor">
-		<figure>
-			<figcaption>
-				<i class="fa fa-sms icono"id="icono" ></i>
-				<div class="tooltip" id="tooltip">
-					<iframe src="http://frontend-desarrolloem.apps.claro.co/sms" height="500" width="600" name="demo">
-					</iframe>
+		<i class="fa fa-sms icono" id="icono" ></i>
+		<div class="tooltip" id="tooltip">
+			<div class="card-header bg-transparent">
+				<div class="navbar navbar-expand p-0">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<div id="minimizar" class="nav-link">
+								<i class="fas fa-window-minimize"></i>
+							</div>
+						</li>
+						<li class="nav-item">
+							<div id="cerrar" class="nav-link">
+								<i class="fas fa-times"></i>
+							</div>
+						</li>
+					</ul>
 				</div>
-			</figcaption>
-		</figure>
+			<iframe src="http://frontend-desarrolloem.apps.claro.co/sms" height="500" width="400" name="demo" id="ifremesms">
+			</iframe>
+			</div>
+		</div>			
 	</main>
-	
 	<script src="main.js"></script>
 </body>
 </html>

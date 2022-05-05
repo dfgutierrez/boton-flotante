@@ -1,5 +1,8 @@
 const icono = document.querySelector('#icono');
 const tooltip = document.querySelector('#tooltip');
+const ifremesms = document.querySelector('#ifremesms');
+const minimizar = document.querySelector('#minimizar');
+const cerrar = document.querySelector('#cerrar');
 
 const calcularPosicionTooltip = () => {
 	// Calculamos las coordenadas del icono.
@@ -11,7 +14,7 @@ const calcularPosicionTooltip = () => {
 	const altoTooltip = tooltip.clientHeight;
 
 	// Calculamos donde posicionaremos el tooltip.
-	const izquierda = x - (anchoTooltip / 2) + 15;
+	const izquierda = x ;
 	const arriba = y - altoTooltip - 20;
 
 	tooltip.style.left = `${izquierda}px`;
@@ -21,17 +24,28 @@ const calcularPosicionTooltip = () => {
 window.addEventListener('load', () => calcularPosicionTooltip());
 window.addEventListener('resize', () => calcularPosicionTooltip());
 
-icono.addEventListener('mouseenter', () => {
+icono.addEventListener('click', () => {
 	tooltip.classList.add('activo');
 	calcularPosicionTooltip();
 });
 
-let timer;
-icono.addEventListener('mouseleave', () => {
-	timer = setTimeout(() => {
-		tooltip.classList.remove('activo');
-	}, 500);
+icono.addEventListener('click', () => {
+	let tooltipIsActivo = tooltip.classList.contains("activos");
+	if(tooltipIsActivo===true){
+		tooltip.classList.remove('activos');
+	}else{
+		tooltip.classList.add('activos');
+	}
+	calcularPosicionTooltip();
 });
 
-tooltip.addEventListener('mouseenter', () => clearTimeout(timer));
-tooltip.addEventListener('mouseleave', () => tooltip.classList.remove('activo'));
+minimizar.addEventListener('click', () => {
+	tooltip.classList.remove('activos');
+});
+
+cerrar.addEventListener('click', () => {
+	ifremesms.src = "http://frontend-desarrolloem.apps.claro.co/sms";
+	tooltip.classList.remove('activos');
+});
+
+
