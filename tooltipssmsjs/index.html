@@ -4,37 +4,61 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="estilos.css">
 	<title>sms-email</title>
 </head>
 <body>
-	<main class="contenedor">
-		<i class="fa fa-sms icono" id="icono" ></i>
-		<div class="tooltip" id="tooltip">
-			<div class="card-header bg-transparent">
-				<div class="navbar navbar-expand p-0">
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
-							<div id="minimizar" class="nav-link">
-								<i class="fas fa-window-minimize"></i>
-							</div>
-						</li>
-						<li class="nav-item">
-							<div id="cerrar" class="nav-link">
-								<i class="fas fa-times"></i>
-							</div>
-						</li>
-					</ul>
-				</div>
-			<iframe src="http://frontend-desarrolloem.apps.claro.co/sms" height="500" width="400" name="demo" id="ifremesms">
-			</iframe>
+
+	<!-- code for SMS-->
+	<i class="fa fa-sms icono-sms" id="icono_sms" ></i>
+	<div class="tooltip-sms" id="tooltip_sms">
+		<div class="card-header bg-transparent">
+			<div class="navbar navbar-expand p-0">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<div id="minimizar_sms" class="nav-link">
+							<i class="fas fa-window-minimize"></i>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div id="cerrar_sms" class="nav-link">
+							<i class="fas fa-times"></i>
+						</div>
+					</li>
+				</ul>
 			</div>
-		</div>			
-	</main>
-	<script src="main.js"></script>
+		<iframe src="http://frontend-desarrolloem.apps.claro.co/sms" height="500" width="400" name="demo" id="ifreme_sms">
+		</iframe>
+		</div>
+	</div>		
+
+	<!-- code for EMAIL-->
+	<i class="fa fa-solid fa-envelope icono-email" id="open_email"></i>
+	<div class="modal-container-email" id="modal_container_email">
+		<div class="modal-email">
+			<div class="navbar navbar-expand p-0">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<div id="minimizar_email" class="nav-link">
+							<i class="fas fa-window-minimize"></i>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div id="cerrar_email" class="nav-link">
+							<i class="fas fa-times"></i>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<iframe src="http://localhost:3000/correo" class="iframe-email" name="demo" id="ifreme_sms">
+			</iframe>
+		</div>
+	</div>
+	
+<script src="main.js"></script>
 </body>
 </html>
+
+

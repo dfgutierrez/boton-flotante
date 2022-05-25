@@ -1,51 +1,68 @@
-const icono = document.querySelector('#icono');
-const tooltip = document.querySelector('#tooltip');
-const ifremesms = document.querySelector('#ifremesms');
-const minimizar = document.querySelector('#minimizar');
-const cerrar = document.querySelector('#cerrar');
+//Variables for sms
+const iconoSms = document.querySelector('#icono_sms');
+const tooltipSms = document.querySelector('#tooltip_sms');
+const ifremeSms = document.querySelector('#ifreme_sms');
+const minimizarSms = document.querySelector('#minimizar_sms');
+const cerrarSms = document.querySelector('#cerrar_sms');
 
+//Variables for email
+const openEmail = document.getElementById('open_email');
+const modalContainerEmail = document.getElementById('modal_container_email');
+const minimizarEmail = document.getElementById('minimizar_email');
+const cerrarEmail = document.getElementById('cerrar_email');
+
+//code for sms
 const calcularPosicionTooltip = () => {
 	// Calculamos las coordenadas del icono.
-	const x = icono.offsetLeft;
-	const y = icono.offsetTop;
+	const x = iconoSms.offsetLeft;
+	const y = iconoSms.offsetTop;
 
 	// Calculamos el tamaño del tooltip.
-	const anchoTooltip = tooltip.clientWidth;
-	const altoTooltip = tooltip.clientHeight;
+	const anchoTooltip = tooltipSms.clientWidth;
+	const altoTooltip = tooltipSms.clientHeight;
 
 	// Calculamos donde posicionaremos el tooltip.
 	const izquierda = x ;
 	const arriba = y - altoTooltip - 20;
 
-	tooltip.style.left = `${izquierda}px`;
-	tooltip.style.top = `${arriba}px`;
+	tooltipSms.style.left = `${izquierda}px`;
+	tooltipSms.style.top = `${arriba}px`;
 };
 
 window.addEventListener('load', () => calcularPosicionTooltip());
 window.addEventListener('resize', () => calcularPosicionTooltip());
 
-icono.addEventListener('click', () => {
-	tooltip.classList.add('activo');
-	calcularPosicionTooltip();
-});
 
-icono.addEventListener('click', () => {
-	let tooltipIsActivo = tooltip.classList.contains("activos");
+iconoSms.addEventListener('click', () => {
+	let tooltipIsActivo = tooltipSms.classList.contains("activo-sms");
 	if(tooltipIsActivo===true){
-		tooltip.classList.remove('activos');
+		tooltipSms.classList.remove('activo-sms');
 	}else{
-		tooltip.classList.add('activos');
+		tooltipSms.classList.add('activo-sms');
 	}
 	calcularPosicionTooltip();
 });
 
-minimizar.addEventListener('click', () => {
-	tooltip.classList.remove('activos');
+minimizarSms.addEventListener('click', () => {
+	tooltipSms.classList.remove('activo-sms');
 });
 
-cerrar.addEventListener('click', () => {
-	ifremesms.src = "http://frontend-desarrolloem.apps.claro.co/sms";
-	tooltip.classList.remove('activos');
+cerrarSms.addEventListener('click', () => {
+	ifremeSms.src = "http://frontend-desarrolloem.apps.claro.co/sms";
+	tooltipSms.classList.remove('activo-sms');
+});
+
+//code for email
+openEmail.addEventListener('click', () => {
+  modalContainerEmail.classList.add('show-email');  
+});
+
+minimizarEmail.addEventListener('click', () => {
+  modalContainerEmail.classList.remove('show-email');
+});
+
+cerrarEmail.addEventListener('click', () => {
+  modalContainerEmail.classList.remove('show-email');
 });
 
 
