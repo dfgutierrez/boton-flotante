@@ -10,6 +10,7 @@ const openEmail = document.getElementById('open_email');
 const modalContainerEmail = document.getElementById('modal_container_email');
 const minimizarEmail = document.getElementById('minimizar_email');
 const cerrarEmail = document.getElementById('cerrar_email');
+const ifremeEmail = document.getElementById('ifreme_email');
 
 //code for sms
 const calcularPosicionTooltip = () => {
@@ -62,6 +63,7 @@ minimizarEmail.addEventListener('click', () => {
 });
 
 cerrarEmail.addEventListener('click', () => {
+  ifremeEmail.src = "http://localhost:3000/correo";
   modalContainerEmail.classList.remove('show-email');
 });
 
